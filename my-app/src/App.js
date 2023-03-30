@@ -13,7 +13,12 @@ const App = () => {
   };
 
   const backspace = () => {
-    setResult(result.slice(0, -1)); // Or -1
+    setResult((r) => {
+      if (r.slice) {
+        return r.slice(0, -1);
+      }
+      return r;
+    });
   };
 
   const calculate = () => {
